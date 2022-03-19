@@ -1,13 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@100;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;400;600;700&display=swap");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Karla";
+  background-color: #f5f7fb;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.frontpage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.frontpage--title {
+  color: #293264;
+  margin: 0;
+}
+
+.frontpage--desc {
+  font-weight: 400;
+  color: #293264;
+  margin-bottom: 40px;
+}
+
+.frontpage--button {
+  background: #4d5b9e;
+  border-radius: 15px;
+  width: 193px;
+  height: 52px;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-family: "Karla";
+  cursor: pointer;
+}
+
+.frontpage--button:active {
+  box-shadow: inset 0 -3em 3em #293887;
+}
+
+.questionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.question {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+}
+
+.question--title {
+  color: #293264;
+}
+
+.question--answers {
+  display: flex;
+  /* display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px; */
+  margin-bottom: 1rem;
+}
+
+.question--answer {
+  margin-right: 0.5rem;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  border-style: solid;
+  border-radius: 6px;
+  padding: 6px 8px 6px 8px;
+  border-color: #c3c3c3;
+  border-width: 0.1rem;
+}
+
+.question > hr {
+  height: 0px;
+  width: 100%;
+  background-color: #dbdef0;
+  border: 0.794239px solid #dbdef0;
+}
+
+.answerButton {
+  margin: 1rem 0 1rem 0;
+  border: none;
+  width: 120px;
+  height: 35px;
+  background: #4d5b9e;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
 }
