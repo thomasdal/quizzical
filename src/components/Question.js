@@ -13,36 +13,46 @@ export default function Question(props){
                 return {
                     answer: answer,
                     id: nanoid(),
-                    isSelected: false
+                    isSelected: false,
+                    isCorrect: false
                 }
             })
         generatedAnswers.push({
             answer: props.item.correct_answer,
             id: nanoid(),
-            isSelected: false
+            isSelected: false,
+            isCorrect: true
         })
         setAnswers(arrayShuffle(generatedAnswers))
     }, [])
 
     function selectAnswer(id){
-        setAnswers(prevAnswers => {
-            return prevAnswers.map(answer =>
-                answer.id === id ?
-                {...answer, isSelected: true} :
-                {...answer, isSelected: false})
-        })
+        if(!props.isChecked)
+        {
+            setAnswers(prevAnswers => {
+                return prevAnswers.map(answer =>
+                    answer.id === id ?
+                    {...answer, isSelected: true} :
+                    {...answer, isSelected: false})
+            })
+        }
     }
 
-    //if (foreach answer there is one answer where isSelected is equal to item.correct_answer)
-    //then correct answer
+    useEffect(() => {
+        if (answers.some(answer => answer.answer === props.item.correct_answer && answer.isSelected)){
+            props.setCorrect(props.item.id, true)
+        } else {
+            props.setCorrect(props.item.id, false)
+        }
+    }, [answers])
 
     const answerElements = answers.map(answer => {
-        return <Answer key={answer.id} answer={answer} handleClick={() => selectAnswer(answer.id)}/>
+        return <Answer isChecked={props.isChecked} key={answer.id} answer={answer} handleClick={() => selectAnswer(answer.id)}/>
     })
 
     return (
         <section className="question">
-            <h1 className="question--title">{props.item.question}</h1>
+            <h1 className="question--title">{props.item.question.replace(/&quot;/g, '"')}</h1>
             <div className="question--answers">
                 {answerElements}
             </div>
