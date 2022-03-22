@@ -1,8 +1,6 @@
 import React from "react";
 
 export default function Answer(props){
-    // props.answer.isCorrect
-    // props.isChecked
     const styles = getStyles()
     
     function getStyles(){
@@ -28,30 +26,6 @@ export default function Answer(props){
             }
         }
     }
-
-    
-        //before answers are checked
-        // backgroundColor: props.answer.isSelected ? "#D6DBF5" : "#F5F7FB",
-
-        //answer is incorrect, the answer has not been selected, the answers have been checked (grey)
-        // backgroundColor: !props.answer.isCorrect && !props.answer.isSelected && props.isChecked ? "#000" : props.answer.isCorrect && props.answer.isSelected && props.isChecked ? "#94D7A2" : "#F8BCBC"
-        // props.answer.isSelected ? "#D6DBF5" : "#F5F7FB"
-        
-        //the answer is correct, is selected, and answers are checked
-        // backgroundColor: props.answer.isCorrect && props.answer.isSelected && props.isChecked ? "#94D7A2" : "#F8BCBC"
-        
-    
-
-    //if is selected then
-    //  if isChecked then
-    //    if isCorrect then
-//         green
-//        else
-//         red
-//       else
-//        grey
-//    else
-//     white
 
 
     return (
