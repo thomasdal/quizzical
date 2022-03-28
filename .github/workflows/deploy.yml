@@ -23,10 +23,10 @@ jobs:
       # Runs a single command using the runners shell
       #Login
       - name: Build image
-        run: docker build -t ${{ env.DOCKER_ID }}/quizzical . 
+        run: docker build -t quizzical . 
 
       - name: Push image
-        run: docker push ${{ env.DOCKER_ID }}/quizzical:latest
+        run: docker push quizzical:latest
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
