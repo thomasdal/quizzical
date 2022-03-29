@@ -50,6 +50,7 @@ jobs:
         with:
           key: ${{ secrets.SSH_KEY_P }}
           name: id_rsa
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
       # Runs a single command using the runners shell
       #Login
       #- name: Create SSH key
