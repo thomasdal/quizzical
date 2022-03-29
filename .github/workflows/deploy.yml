@@ -61,4 +61,4 @@ jobs:
       
       - name: run deploy script on droplet
         run: |
-          ssh -o "StrictHostKeyChecking no" ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }} 'deploy.sh'
+          ssh -o "StrictHostKeyChecking no" ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }} './deploy.sh'
