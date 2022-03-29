@@ -45,16 +45,19 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      - uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.SSH_KEY_P }}
       # Runs a single command using the runners shell
       #Login
-      - name: Create SSH key
+      #- name: Create SSH key
       
-        run: |
-          mkdir ~/.ssh/
-          echo "${{env.SSH_KEY_P}}" > ~/.ssh/id_rsa
-          sudo chmod 600 ~/.ssh/id_rsa
-          eval `ssh-agent`
-          ssh-add ~/.ssh/id_rsa
+        #run: |
+          #mkdir ~/.ssh/
+          #echo "${{env.SSH_KEY_P}}" > ~/.ssh/id_rsa
+          #sudo chmod 600 ~/.ssh/id_rsa
+          #eval `ssh-agent`
+          #ssh-add ~/.ssh/id_rsa
       
       - name: run deploy script on droplet
         run: |
