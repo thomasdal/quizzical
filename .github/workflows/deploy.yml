@@ -61,4 +61,4 @@ jobs:
       
       - name: run deploy script on droplet
         run: |
-          ssh -o "StrictHostKeyChecking no" ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }} < docker run -it --rm -d -p 80:80 sample:prod
+          ssh -o "StrictHostKeyChecking no" ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }} < quizzical/deploy.sh
